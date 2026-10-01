@@ -57,44 +57,59 @@
         text-align: center;
         width: 100%;
     }
-    // BibBase publication list: keep its icons and badges at their own size
-    #bibbase img {
-        width: auto;
-    }
-    #bibbase .bibbase_icon {
-        margin-right: 3px;
-    }
-    #bibbase .bibbase_artifact_badge {
-        height: 1.8em;
-        vertical-align: middle;
-    }
-    // Bold titles (the "simple" theme forces normal weight with !important)
-    #bibbase .bibbase_paper_title {
-        font-weight: bold !important;
-    }
-    // Put "In <venue>, <date>. <awards>" and the Paper / Web / Code links
-    // each on their own line
-    #bibbase .bibbase_paper_titleauthoryear,
-    #bibbase span.bibbase_paper_content {
-        display: block;
-    }
-    // Hide the toolbar (group by, expand all, download BibTeX, RSS)
-    #bibbase #bibbase_header {
-        display: none;
-    }
-    // Hide the per-paper "link" and "bibtex" items
-    #bibbase .bibbase_page.link,
-    #bibbase .bibtex.link {
-        display: none;
-    }
-    // Keep the owner's name highlighted, but not clickable
-    #bibbase .bibbase_paper_author a.author {
-        pointer-events: none;
-        cursor: text;
-    }
-    // Awards, as on vusec.net
-    #bibbase .note {
-        font-style: italic;
-        color: blue;
+    // Publication list (_includes/publications.html)
+    .publications {
+        // Collapsible year headings with a chevron, like BibBase
+        .pub-year > summary {
+            font-weight: bold;
+            margin: 10px 0 4px 0;
+            cursor: pointer;
+            list-style: none;
+            &::-webkit-details-marker {
+                display: none;
+            }
+            &::before {
+                content: "\203A";  // single right-pointing angle quote
+                display: inline-block;
+                width: 1em;
+                margin-right: 6px;
+                text-align: center;
+                transition: transform 0.15s;
+            }
+        }
+        .pub-year[open] > summary::before {
+            transform: rotate(90deg);
+        }
+        .pub {
+            margin: 0 0 10px 20px;
+        }
+        .pub-head,
+        .pub-venue,
+        .pub-links {
+            display: block;
+        }
+        .pub-title {
+            font-weight: bold;
+            color: inherit;
+        }
+        .pub-me {
+            color: $accent;
+        }
+        .pub-note {
+            font-style: italic;
+            color: blue;
+        }
+        .pub-links {
+            font-size: 0.8em;
+            a {
+                margin-right: 1em;
+            }
+        }
+        .pub-badges img {
+            width: auto;
+            height: 1.8em;
+            vertical-align: middle;
+            margin-left: 3px;
+        }
     }
 }

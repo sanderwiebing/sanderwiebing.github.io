@@ -1,0 +1,171 @@
+[
+  {
+    "title": "Branch Target Reuse: Practical Spectre-v2 Attacks in JIT Engines via Stale Branch Prediction Entries",
+    "authors": [
+      {
+        "name": "Wiebing, S.",
+        "me": true
+      },
+      {
+        "name": "Yuhui, Z.",
+        "me": false
+      },
+      {
+        "name": "Biondi, A.",
+        "me": false
+      },
+      {
+        "name": "Giuffrida, C.",
+        "me": false
+      }
+    ],
+    "venue": "CCS",
+    "date": "November 2026",
+    "year": "2026",
+    "month": 11,
+    "note": "",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://download.vusec.net/papers/btr_ccs26.pdf"
+      },
+      {
+        "label": "Web",
+        "url": "https://www.vusec.net/projects/btr"
+      },
+      {
+        "label": "Code",
+        "url": "https://github.com/vusec/btr"
+      }
+    ],
+    "badges": []
+  },
+  {
+    "title": "Training Solo: On the Limitations of Domain Isolation Against Spectre-v2 Attacks",
+    "authors": [
+      {
+        "name": "Wiebing, S.",
+        "me": true
+      },
+      {
+        "name": "Giuffrida, C.",
+        "me": false
+      }
+    ],
+    "venue": "IEEE S&P",
+    "date": "May 2025",
+    "year": "2025",
+    "month": 5,
+    "note": "CSAW Best Paper Award Runner-up, Intel Bounty Reward",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://download.vusec.net/papers/trainingsolo_sp25.pdf"
+      },
+      {
+        "label": "Web",
+        "url": "https://www.vusec.net/projects/training-solo"
+      },
+      {
+        "label": "Code",
+        "url": "https://github.com/vusec/training-solo"
+      }
+    ],
+    "badges": []
+  },
+  {
+    "title": "InSpectre Gadget: Inspecting the Residual Attack Surface of Cross-privilege Spectre v2",
+    "authors": [
+      {
+        "name": "Wiebing, S.",
+        "me": true
+      },
+      {
+        "name": "de Faveri Tron, A.",
+        "me": false
+      },
+      {
+        "name": "Bos, H.",
+        "me": false
+      },
+      {
+        "name": "Giuffrida, C.",
+        "me": false
+      }
+    ],
+    "venue": "USENIX Security",
+    "date": "August 2024",
+    "year": "2024",
+    "month": 8,
+    "note": "Distinguished Paper Award, DCSR Paper Award Runner-up",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://download.vusec.net/papers/inspectre_sec24.pdf"
+      },
+      {
+        "label": "Web",
+        "url": "https://vusec.net/projects/native-bhi"
+      },
+      {
+        "label": "Code",
+        "url": "https://github.com/vusec/inspectre-gadget"
+      },
+      {
+        "label": "Video",
+        "url": "https://www.youtube.com/watch?v=bd7l-xhEtCE"
+      }
+    ],
+    "badges": [
+      {
+        "image": "available.png",
+        "title": "Artifacts Available"
+      },
+      {
+        "image": "evaluated.png",
+        "title": "Artifacts Functional"
+      },
+      {
+        "image": "results.png",
+        "title": "Results Reproduced"
+      }
+    ]
+  },
+  {
+    "title": "Leaky Address Masking: Exploiting Unmasked Spectre Gadgets with Noncanonical Address Translation",
+    "authors": [
+      {
+        "name": "Hertogh, M.",
+        "me": false
+      },
+      {
+        "name": "Wiebing, S.",
+        "me": true
+      },
+      {
+        "name": "Giuffrida, C.",
+        "me": false
+      }
+    ],
+    "venue": "S&P",
+    "date": "May 2024",
+    "year": "2024",
+    "month": 5,
+    "note": "",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://download.vusec.net/papers/slam_sp24.pdf"
+      },
+      {
+        "label": "Web",
+        "url": "https://www.vusec.net/projects/slam"
+      },
+      {
+        "label": "Code",
+        "url": "https://github.com/vusec/slam"
+      }
+    ],
+    "badges": []
+  }
+]

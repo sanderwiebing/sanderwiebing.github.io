@@ -22,3 +22,9 @@ nav:
    link: "/resume.pdf"
  - name: "Contact"
    link: "/contact"
+
+exclude:
+ - scripts
+ - Gemfile
+ - Gemfile.lock
+ - vendor

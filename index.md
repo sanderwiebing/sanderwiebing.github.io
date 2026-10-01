@@ -15,7 +15,7 @@ microarchitectural attacks, systems security, cloud security, side-channels, bin
 
 ## Publications
 
-<script src="https://bibbase.org/show?bib=https://download.vusec.net/papers/zotero.php?q=Wiebing%26full=%26format=bibtex%26sort=date&theme=simple&jsonp=1&owner=Wiebing&filter=keywords:type_paper"></script>
+{% include publications.html %}
 
 
 <!-- 1. F.Bar, J.Doe: Effects of having a placeholder of a name
@@ -41,7 +41,7 @@ Here is a blockquote
 
 > To a great mind, nothing is little
 
-## References
+<!-- ## References
 
 * Foo Bar: Head of Department, Placeholder Names, Lorem
-* John Doe: Associate Professor, Department of Computer Science, Ipsum
+* John Doe: Associate Professor, Department of Computer Science, Ipsum -->
