@@ -57,4 +57,44 @@
         text-align: center;
         width: 100%;
     }
+    // BibBase publication list: keep its icons and badges at their own size
+    #bibbase img {
+        width: auto;
+    }
+    #bibbase .bibbase_icon {
+        margin-right: 3px;
+    }
+    #bibbase .bibbase_artifact_badge {
+        height: 1.8em;
+        vertical-align: middle;
+    }
+    // Bold titles (the "simple" theme forces normal weight with !important)
+    #bibbase .bibbase_paper_title {
+        font-weight: bold !important;
+    }
+    // Put "In <venue>, <date>. <awards>" and the Paper / Web / Code links
+    // each on their own line
+    #bibbase .bibbase_paper_titleauthoryear,
+    #bibbase span.bibbase_paper_content {
+        display: block;
+    }
+    // Hide the toolbar (group by, expand all, download BibTeX, RSS)
+    #bibbase #bibbase_header {
+        display: none;
+    }
+    // Hide the per-paper "link" and "bibtex" items
+    #bibbase .bibbase_page.link,
+    #bibbase .bibtex.link {
+        display: none;
+    }
+    // Keep the owner's name highlighted, but not clickable
+    #bibbase .bibbase_paper_author a.author {
+        pointer-events: none;
+        cursor: text;
+    }
+    // Awards, as on vusec.net
+    #bibbase .note {
+        font-style: italic;
+        color: blue;
+    }
 }

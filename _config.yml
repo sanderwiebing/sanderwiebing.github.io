@@ -1,9 +1,9 @@
-title: Researcher
-url: "https://ankitsultana.com"
-baseurl: "/researcher"
+title: Sander Wiebing
+url: "https://sanderwiebing.github.io"
+baseurl: ""
 
 markdown: kramdown
-#ins_logo: "./bits-logo.png"
+# ins_logo: "./bits-logo.png"
 
 tracking_id: #
 
@@ -17,8 +17,8 @@ sass:
 
 nav:
  - name: "About"
-   link: "/researcher/"
+   link: "/"
  - name: "Resume"
-   link: "resume.pdf"
+   link: "/resume.pdf"
  - name: "Contact"
-   link: "contact"
+   link: "/contact"
