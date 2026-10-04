@@ -1,0 +1,6 @@
+{%- comment -%}
+  Email address written as "user [at] domain" (not a mailto: link), so it
+  is not picked up by simple scrapers.
+  Address parts are set as email_user / email_domain in _config.yml.
+{%- endcomment -%}
+<span class="email">{{ site.email_user }} [at] {{ site.email_domain }}</span>

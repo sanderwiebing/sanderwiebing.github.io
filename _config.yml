@@ -15,6 +15,11 @@ sass:
     style: compressed
     sass_dir: _sass
 
+# Email for the contact page; shown via _includes/email.html, which hides it
+# from scrapers (the page source only contains the address reversed)
+email_user: "s.j.wiebing"
+email_domain: "vu.nl"
+
 # Icons below the profile picture; leave a link empty to hide its icon
 social:
   github: "https://github.com/sanderwiebing"

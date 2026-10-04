@@ -3,7 +3,7 @@
   Links are set under `social:` in _config.yml; empty ones are hidden.
 {% endcomment %}
 <div class="profile">
-  <img class="profile-picture" src="{{ include.image | default: 'sherlock.jpg' | relative_url }}" alt="{{ site.title }}">
+  <img class="profile-picture" src="{{ include.image | relative_url }}" alt="{{ site.title }}">
   <div class="social">
     {% if site.social.github and site.social.github != "" %}<a href="{{ site.social.github }}" title="GitHub" aria-label="GitHub">{% include icons/github.svg %}</a>{% endif %}
     {% if site.social.scholar and site.social.scholar != "" %}<a href="{{ site.social.scholar }}" title="Google Scholar" aria-label="Google Scholar">{% include icons/scholar.svg %}</a>{% endif %}

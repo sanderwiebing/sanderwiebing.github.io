@@ -133,7 +133,7 @@
             margin-left: 3px;
         }
     }
-    // Vulnerability list (_includes/vulnerabilities.html)
+    // CVE label (_includes/impact.html)
     .cve {
         display: inline-block;
         font-size: 0.75em;
@@ -142,11 +142,27 @@
         margin: 0 2px;
         border: 1px solid #999999;
         border-radius: 3px;
-        color: #000000;  // same as .vuln-meta; use #000000 for black
+        color: #000000;
         vertical-align: 1px;
     }
-    .vulns .vuln-meta {
+    // Security impact (_includes/impact.html)
+    .impact .impact-meta {
         font-size: 0.85em;
         color: #555555;
+    }
+    // Contact page (contact.md)
+    ul.contact-list {
+        list-style: none;
+        padding: 0;
+        > li {
+            margin: 8px 0;
+        }
+        .contact-icon svg {
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+            vertical-align: -3px;
+            color: #555555;
+        }
     }
 }

@@ -1,10 +1,11 @@
 ---
 layout: default
+title: Sander Wiebing
 ---
 
 ## About Me
 
-{% include profile.html image="sherlock.jpg" %}
+{% include profile.html image="small-pf-2.png" %}
 
 Hi! I am a 4th-year PhD student in the [VUSec](https://www.vusec.net) group
 in Amsterdam. My research focus is microarchitectural attacks.
@@ -16,7 +17,7 @@ attacks, such as Spectre, and how operating-systems, cloud vendors, and software
 better defend against them.
 
 More broadly, I am interested in systems and cloud security,
-side channels, memory-safety, binary analysis, and other low-level topics.
+program and binary analysis, side channels, memory-safety and other security topics.
 
 ## Publications
 
@@ -26,9 +27,9 @@ side channels, memory-safety, binary analysis, and other low-level topics.
 <!-- 1. F.Bar, J.Doe: Effects of having a placeholder of a name
 2. S.Holmes, J.Watson: Consequences of living with a sociopath in London -->
 
-## Security Impact
+## Practical Impact
 
-{% include vulnerabilities.html %}
+{% include impact.html %}
 
 <!-- ## Typography
 

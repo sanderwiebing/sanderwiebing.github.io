@@ -1,0 +1,30 @@
+{% comment %}
+  Security impact: one entry per mitigation, grouped by where it landed
+  (Intel, Linux kernel, ...), in the same style as the publication list.
+  Data: _data/impact.yml
+{% endcomment %}
+<div class="publications impact">
+{% for group in site.data.impact.groups %}
+<details class="pub-year" open>
+  <summary>{{ group | escape }}</summary>
+  {% for f in site.data.impact.findings %}{% for m in f.mitigations %}{% if m.group == group %}
+  <div class="pub">
+    <span class="pub-head">
+      <span class="pub-title">{{ m.action | escape }}</span>
+      {% for c in m.cves %}<a class="cve" href="https://www.cve.org/CVERecord?id={{ c }}">{{ c }}</a>{% endfor %}
+    </span>
+    <span class="pub-venue impact-meta">Mitigates {{ f.name | escape }}, disclosed in <a href="{{ f.url }}"><i>{{ f.paper | escape }}</i></a>.</span>
+    {% if m.links %}<span class="pub-links">{% for l in m.links %}<a href="{{ l.url }}">{{ l.label | escape }}</a>{% endfor %}</span>{% endif %}
+  </div>
+  {% endif %}{% endfor %}{% endfor %}
+</details>
+{% endfor %}
+{% if site.data.impact.acknowledgements %}
+<details class="pub-year" open>
+  <summary>Acknowledged by</summary>
+  <div class="pub">
+    <span class="pub-links">{% for l in site.data.impact.acknowledgements %}<a href="{{ l.url }}">{{ l.label | escape }}</a>{% endfor %}</span>
+  </div>
+</details>
+{% endif %}
+</div>

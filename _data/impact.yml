@@ -1,0 +1,132 @@
+# Security impact of my research: every mitigation that followed from a
+# finding. Edited by hand; rendered by _includes/impact.html, which shows
+# each mitigation as its own entry, grouped by where it landed.
+
+# Group headings, in display order. Every mitigation's `group` must be one
+# of these.
+groups:
+  - Linux kernel
+  - Intel
+  - Other software
+
+# Vendor bulletins acknowledging the work, shown as one line of links
+# under "Acknowledged by" at the end of the section.
+acknowledgements:
+  - label: ARM-110504
+    url: https://developer.arm.com/documentation/110504/1-0
+  - label: AMD-7034
+    url: https://www.amd.com/en/resources/product-security/bulletin/amd-sb-7034.html
+  - label: AMD-7018
+    url: https://www.amd.com/en/resources/product-security/bulletin/amd-sb-7018.html
+  # - label: ARM-110368
+  #   url: https://developer.arm.com/documentation/110368/1-0/?lang=en
+
+# Findings (newest first; entries keep this order within a group):
+#   name         finding name
+#   paper        paper it was disclosed in
+#   venue        short venue, e.g. "IEEE S&P 2025"
+#   url          project page
+#   mitigations  list of:
+#     group      one of the groups above
+#     action     the mitigation, shown in bold
+#     cves       CVE ids (may be omitted)
+#     links      advisories / patches: [{label, url}]
+findings:
+  - name: Branch Target Reuse (BTR)
+    paper: Branch Target Reuse
+    venue: CCS 2026
+    url: https://www.vusec.net/projects/btr
+    mitigations:
+      - group: Linux kernel
+        action: IBPB on BPF JIT region reuse
+        cves: [CVE-2026-64507]
+        links:
+          - label: Linux advisory
+            url: https://lore.kernel.org/linux-cve-announce/2026072554-CVE-2026-64507-5288@gregkh/
+      - group: Linux kernel
+        action: BPF JIT spraying hardening
+        cves: [CVE-2026-64508]
+        links:
+          - label: Linux advisory
+            url: https://lore.kernel.org/linux-cve-announce/2026072554-CVE-2026-64508-fe26@gregkh
+      - group: Other software
+        action: JIT code-cache randomization in GraalVM
+        links:
+          - label: GraalVM patch
+            url: https://github.com/oracle/graal/pull/14261
+
+  - name: Indirect Target Selection (ITS)
+    paper: Training Solo
+    venue: IEEE S&P 2025
+    url: https://www.vusec.net/projects/training-solo
+    mitigations:
+      - group: Intel
+        action: Microcode update
+        cves: [CVE-2024-28956]
+        links:
+          - label: Intel ITS guidance
+            url: https://www.intel.com/content/www/us/en/developer/articles/technical/software-security-guidance/advisory-guidance/indirect-target-selection.html
+          - label: INTEL-SA-01153
+            url: https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01153.html
+      - group: Linux kernel
+        action: ITS Indirect branch thunks
+        cves: [CVE-2024-28956]
+        links:
+          - label: Linux docs
+            url: https://docs.kernel.org/admin-guide/hw-vuln/indirect-target-selection.html
+
+  - name: Incorrect BPU initialization
+    paper: Training Solo
+    venue: IEEE S&P 2025
+    url: https://www.vusec.net/projects/training-solo
+    mitigations:
+      - group: Intel
+        action: Microcode update
+        cves: [CVE-2025-24495]
+        links:
+          - label: INTEL-SA-01322
+            url: https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01322.html
+
+  - name: History-based self-training
+    paper: Training Solo
+    venue: IEEE S&P 2025
+    url: https://www.vusec.net/projects/training-solo
+    mitigations:
+      - group: Intel
+        action: New x86 instruction (IBHF)
+        links:
+          - label: Intel guidance
+            url: https://www.intel.com/content/www/us/en/developer/articles/technical/software-security-guidance/technical-documentation/branch-history-injection.html#ibhf
+      - group: Linux kernel
+        action: BHB clearing / IBHF at the end of cBPF programs
+        links:
+          - label: Patch (BHB clearing)
+            url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=d4e89d212d401672e9cdfe825d947ee3a9fbe3f5
+          - label: Patch (IBHF)
+            url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=9f725eec8fc0b39bdc07dcc8897283c367c1a163
+
+  - name: Native BHI
+    paper: InSpectre Gadget
+    venue: USENIX Security 2024
+    url: https://vusec.net/projects/native-bhi
+    mitigations:
+      - group: Intel
+        action: Hardware control (BHI_DIS_S)
+        cves: [CVE-2024-2201]
+        links:
+          - label: Intel BHI guidance
+            url: https://www.intel.com/content/www/us/en/developer/articles/technical/software-security-guidance/technical-documentation/branch-history-injection.html
+      - group: Linux kernel
+        action: BHB clearing at syscall entry
+        cves: [CVE-2024-2201]
+        links:
+          - label: Patches
+            url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=2bb69f5fc72183e1c62547d900f560d0e9334925
+
+  # - name: SLAM
+  #   paper: Leaky Address Masking
+  #   venue: IEEE S&P 2024
+  #   url: https://www.vusec.net/projects/slam
+  #   mitigations:
+  #     - group: Intel
+  #       action: Linear Address Space Separation (LASS)
