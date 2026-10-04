@@ -1,0 +1,25 @@
+{% comment %}
+  Vulnerability list, grouped by year (same style as the publication list).
+  Data: _data/vulnerabilities.yml
+{% endcomment %}
+<div class="publications vulns">
+{% assign years = site.data.vulnerabilities | group_by: "year" %}
+{% for year in years %}
+<details class="pub-year" open>
+  <summary>{{ year.name }}</summary>
+  {% for v in year.items %}
+  <div class="pub">
+    <span class="pub-head">
+      <span class="pub-title">{{ v.name | escape }}</span>
+      {% for c in v.cves %}<a class="cve" href="https://www.cve.org/CVERecord?id={{ c }}">{{ c }}</a>{% endfor %}
+    </span>
+    <span class="pub-venue vuln-meta">Disclosed in <a href="{{ v.paper_url }}"><i>{{ v.paper | escape }}</i></a> ({{ v.venue | escape }}).</span>
+    <span class="pub-venue vuln-meta">Mitigated by: {{ v.mitigation | escape }}</span>
+    <span class="pub-links">
+      {% for l in v.links %}<a href="{{ l.url }}">{{ l.label | escape }}</a>{% endfor %}
+    </span>
+  </div>
+  {% endfor %}
+</details>
+{% endfor %}
+</div>

@@ -4,14 +4,19 @@ layout: default
 
 ## About Me
 
-<img class="profile-picture" src="sherlock.jpg">
+{% include profile.html image="sherlock.jpg" %}
 
-Hi! I am a 4th year PhD student in the VUSec group.
+Hi! I am a 4th-year PhD student in the [VUSec](https://www.vusec.net) group
+in Amsterdam. My research focus is microarchitectural attacks.
 
-<!-- ## Research Interest -->
+## Research Interests
 
-My research interests include
-microarchitectural attacks, systems security, cloud security, side-channels, binary analysis and other low-level stuff.
+I study how modern CPUs can be exploited through microarchitectural
+attacks, such as Spectre, and how operating-systems, cloud vendors, and software in general can
+better defend against them.
+
+More broadly, I am interested in systems and cloud security,
+side channels, memory-safety, binary analysis, and other low-level topics.
 
 ## Publications
 
@@ -21,7 +26,11 @@ microarchitectural attacks, systems security, cloud security, side-channels, bin
 <!-- 1. F.Bar, J.Doe: Effects of having a placeholder of a name
 2. S.Holmes, J.Watson: Consequences of living with a sociopath in London -->
 
-## Typography
+## Security Impact
+
+{% include vulnerabilities.html %}
+
+<!-- ## Typography
 
 This is a [link](http://google.com). Something *italics* and something **bold**.
 
@@ -39,7 +48,7 @@ Here is a horizontal rule
 
 Here is a blockquote
 
-> To a great mind, nothing is little
+> To a great mind, nothing is little -->
 
 <!-- ## References
 

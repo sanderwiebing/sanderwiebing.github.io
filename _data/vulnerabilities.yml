@@ -1,0 +1,98 @@
+# Vulnerabilities found in my research, newest first.
+# Edited by hand; rendered by _includes/vulnerabilities.html.
+#
+# Fields:
+#   name        vulnerability name
+#   year        disclosure year (used for grouping)
+#   paper       paper title, as in _data/publications.json
+#   venue       short venue, e.g. "IEEE S&P 2025"
+#   paper_url   project page
+#   cves        list of CVE ids (may be empty)
+#   vendors     affected vendors
+#   mitigation  how it was fixed
+#   links       vendor advisories / guidance: [{label, url}]
+
+- name: Branch Target Reuse (BTR)
+  year: 2026
+  paper: Branch Target Reuse
+  venue: CCS 2026
+  paper_url: https://www.vusec.net/projects/btr
+  cves: [CVE-2026-64507, CVE-2026-64508]
+  vendors: [Intel, AMD, Arm]
+  mitigation: >-
+    Software mitigations in Linux & GraalVM.
+  links:
+    - label: Linux advisory (IBPB)
+      url: https://lore.kernel.org/linux-cve-announce/2026072554-CVE-2026-64507-5288@gregkh/
+    - label: Linux advisory (BPF)
+      url: https://lore.kernel.org/linux-cve-announce/2026072554-CVE-2026-64508-fe26@gregkh
+    - label: GraalVM patch
+      url: https://github.com/oracle/graal/pull/14261
+
+- name: Indirect Target Selection (ITS)
+  year: 2025
+  paper: Training Solo
+  venue: IEEE S&P 2025
+  paper_url: https://www.vusec.net/projects/training-solo
+  cves: [CVE-2024-28956]
+  vendors: [Intel]
+  mitigation: Microcode update (IBPB) on Intel and software mitigation in Linux.
+  links:
+    - label: Intel ITS guidance
+      url: https://www.intel.com/content/www/us/en/developer/articles/technical/software-security-guidance/advisory-guidance/indirect-target-selection.html
+    - label: INTEL-SA-01153
+      url: https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01153.html
+    - label: Linux docs
+      url: https://docs.kernel.org/admin-guide/hw-vuln/indirect-target-selection.html
+
+- name: Incorrect BPU initialization
+  year: 2025
+  paper: Training Solo
+  venue: IEEE S&P 2025
+  paper_url: https://www.vusec.net/projects/training-solo
+  cves: [CVE-2025-24495]
+  vendors: [Intel]
+  mitigation: Microcode update on Intel.
+  links:
+    - label: INTEL-SA-01322
+      url: https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01322.html
+
+- name: History-based self-training
+  year: 2025
+  paper: Training Solo
+  venue: IEEE S&P 2025
+  paper_url: https://www.vusec.net/projects/training-solo
+  cves: []
+  vendors: [Intel, Arm]
+  mitigation: New x86 instruction (IBHF) on Intel, software mitigation in Linux.
+  links:
+    - label: ARM-110504
+      url: https://developer.arm.com/documentation/110504/1-0
+    - label: AMD-7034
+      url: https://www.amd.com/en/resources/product-security/bulletin/amd-sb-7034.html
+
+- name: Native BHI
+  year: 2024
+  paper: InSpectre Gadget
+  venue: USENIX Security 2024
+  paper_url: https://vusec.net/projects/native-bhi
+  cves: [CVE-2024-2201]
+  vendors: [Intel]
+  mitigation: Enabling hardware feature (BHI_DIS_S) and software mitigations.
+  links:
+    - label: Intel BHI guidance
+      url: https://www.intel.com/content/www/us/en/developer/articles/technical/software-security-guidance/technical-documentation/branch-history-injection.html
+    - label: AMD-7018
+      url: https://www.amd.com/en/resources/product-security/bulletin/amd-sb-7018.html
+
+# - name: Spectre based on Linear Address Masking (SLAM)
+#   year: 2024
+#   paper: Leaky Address Masking
+#   venue: IEEE S&P 2024
+#   paper_url: https://www.vusec.net/projects/slam
+#   cves: []
+#   vendors: [Intel, AMD, Arm]
+#   mitigation: Enabling the LASS hardware feature.
+#   links:
+#     - label: ARM-110368
+#       url: https://developer.arm.com/documentation/110368/1-0/?lang=en

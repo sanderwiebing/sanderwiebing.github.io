@@ -8,18 +8,24 @@ markdown: kramdown
 tracking_id: #
 
 footer: yes
-footer_url: "https://github.com/ankitsultana"
-footer_text: "Page design by Ankit Sultana"
+footer_url: ""
+footer_text: "s.j.wiebing [at] vu.nl"
 
 sass:
     style: compressed
     sass_dir: _sass
 
+# Icons below the profile picture; leave a link empty to hide its icon
+social:
+  github: "https://github.com/sanderwiebing"
+  scholar: "https://scholar.google.com/citations?user=VpZeIowAAAAJ&hl=nl"     # e.g. https://scholar.google.com/citations?user=XXXXXXXX
+  linkedin: "https://www.linkedin.com/in/swiebing"    # e.g. https://www.linkedin.com/in/your-name/
+
 nav:
  - name: "About"
    link: "/"
- - name: "Resume"
-   link: "/resume.pdf"
+#  - name: "Resume"
+#    link: "/resume.pdf"
  - name: "Contact"
    link: "/contact"
 

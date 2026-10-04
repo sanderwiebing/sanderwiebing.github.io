@@ -36,12 +36,33 @@
         padding: 2px 8px 2px 8px;
         font-style: italic;
     }
+    // Profile picture with social icons below (_includes/profile.html)
+    .profile {
+        float: right;
+        margin: -10px 0 10px 15px;
+        text-align: center;
+    }
+    .social {
+        margin-top: 6px;
+        a {
+            display: inline-block;
+            margin: 0 3px;
+            color: #555555;
+            &:hover {
+                color: $accent;
+            }
+        }
+        svg {
+            width: 18px;
+            height: 18px;
+            vertical-align: middle;
+        }
+    }
     .profile-picture {
         height: $image-size;
         width: $image-size;
         position: relative;
-        margin: -10px 0 0 15px;
-        float: right;
+        display: block;
         border-radius: 50%;
         p & {
             padding: 0;
@@ -111,5 +132,21 @@
             vertical-align: middle;
             margin-left: 3px;
         }
+    }
+    // Vulnerability list (_includes/vulnerabilities.html)
+    .cve {
+        display: inline-block;
+        font-size: 0.75em;
+        white-space: nowrap;
+        padding: 0 5px;
+        margin: 0 2px;
+        border: 1px solid #999999;
+        border-radius: 3px;
+        color: #000000;  // same as .vuln-meta; use #000000 for black
+        vertical-align: 1px;
+    }
+    .vulns .vuln-meta {
+        font-size: 0.85em;
+        color: #555555;
     }
 }
