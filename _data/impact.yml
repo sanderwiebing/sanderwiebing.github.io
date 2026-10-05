@@ -12,6 +12,14 @@ groups:
 # Vendor bulletins acknowledging the work, shown as one line of links
 # under "Acknowledged by" at the end of the section.
 acknowledgements:
+  - label: INTEL-2026-10-01-001
+    url: https://www.intel.com/content/www/us/en/security-center/announcement/intel-security-announcement-2026-10-01-001.html
+  - label: INTEL-SA-01153
+    url: https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01153.html
+  - label: INTEL-SA-01322
+    url: https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01322.html
+  - label: INTEL-2024-04-09-001
+    url: https://www.intel.com/content/www/us/en/security-center/announcement/intel-security-announcement-2024-04-09-001.html
   - label: ARM-110504
     url: https://developer.arm.com/documentation/110504/1-0
   - label: AMD-7034
@@ -64,16 +72,18 @@ findings:
         action: Microcode update
         cves: [CVE-2024-28956]
         links:
-          - label: Intel ITS guidance
-            url: https://www.intel.com/content/www/us/en/developer/articles/technical/software-security-guidance/advisory-guidance/indirect-target-selection.html
           - label: INTEL-SA-01153
             url: https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01153.html
+          - label: Intel ITS guidance
+            url: https://www.intel.com/content/www/us/en/developer/articles/technical/software-security-guidance/advisory-guidance/indirect-target-selection.html
       - group: Linux kernel
         action: ITS Indirect branch thunks
         cves: [CVE-2024-28956]
         links:
           - label: Linux docs
             url: https://docs.kernel.org/admin-guide/hw-vuln/indirect-target-selection.html
+          - label: Intel ITS guidance
+            url: https://www.intel.com/content/www/us/en/developer/articles/technical/software-security-guidance/advisory-guidance/indirect-target-selection.html
 
   - name: Incorrect BPU initialization
     paper: Training Solo

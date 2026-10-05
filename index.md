@@ -8,7 +8,7 @@ title: Sander Wiebing
 {% include profile.html image="small-pf-2.png" %}
 
 Hi! I am a 4th-year PhD student in the [VUSec](https://www.vusec.net) group
-in Amsterdam. My research focus is microarchitectural attacks.
+in Amsterdam. My research focus is microarchitectural security.
 
 ## Research Interests
 
