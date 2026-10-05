@@ -17,7 +17,7 @@ attacks, such as Spectre, and how operating-systems, cloud vendors, and software
 better defend against them.
 
 More broadly, I am interested in systems and cloud security,
-program and binary analysis, side channels, memory-safety and other security topics.
+program and binary analysis, side channels, and memory-safety.
 
 ## Publications
 
